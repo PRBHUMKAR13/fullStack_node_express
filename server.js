@@ -1,10 +1,11 @@
+const cors = require('cors');
 const express = require('express');
 const app = express();
 const PORT = 5000;
 const products = require('./product');
 
 app.use(express.json());
-
+app.use(cors()); // This opens the door for your frontend app to connect!
 // A basic route to test if the server works
 app.get('/', (req, res) => {
     res.send('Hello, your backend server is officially alive and running!');
